@@ -19,6 +19,9 @@ void binMenu(char* fileName) {
 		case 1:
 			binInput(fileName, 'n');
 			break;
+		case 2:
+			binInput(fileName, 'a');
+			break;
 		case 3:
 			output(fileName);
 			break;
@@ -72,6 +75,7 @@ void binInput(char* fileName, char mod) {
 			printf(" Can't open file %s \n ", fileName);
 			return;
 		}
+		fseek(binFile, 0, SEEK_END);
 	}
 	printf(" Enter your numbers ");
 	do {
